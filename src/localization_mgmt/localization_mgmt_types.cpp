@@ -220,6 +220,11 @@ void DynamicObject::getTransformStamped(geometry_msgs::TransformStamped& tfs, bo
     valid = true;
 }
 
+void DynamicObject::setCurrPose(geometry_msgs::Pose pose) {
+    currPose_ = pose;
+    poseAtStartOfDeltaTraj_ = pose;
+}
+
 
 DynamicObjectArray::DynamicObjectArray(std::string frameId, std::string frameIdObjectsPrefix) {
     frameId_ = frameId;
